@@ -14,6 +14,8 @@
 - [Project Management](#-project-management)
 - [Business Impact & Enablement](#-business-impact--enablement)
 - [About Me](#-about-me)
+- [License](#-license)
+- [Credits](#-credits)
 
 
 ## 📘 Project Overview
