@@ -22,21 +22,24 @@ As a self-directed data analyst, I developed this project to showcase a complete
 
 ## 🔍 Business Problem
 
-The company lacked a centralized, analysis-ready database to answer critical business questions such as:
+The company was unable to generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. Due to bad data, the company could not answer crucial business questions like:
 
 * Which products generate the most revenue?
 * Who are our most valuable customers?
 * What patterns exist in sales across countries and time?
 * How can we enable more effective marketing campaigns?
 
+I designed and implemented a modular **SQL data warehouse** to unify raw CRM and ERP datasets. This enabled clean, scalable, and analytics-ready data models for future business intelligence use. This architecture enables analysts and BI developers to confidently explore trends in customer behavior, product performance, and sales over time — without wrestling with dirty source data.
+
+
 ## 🧑‍🏢 Stakeholders & Goals
 
 | Stakeholder            | Goals                                                    |
 | ---------------------- | -------------------------------------------------------- |
-| Chief Revenue Officer  | Maximize product revenue, optimize pricing               |
-| Regional Sales Manager | Understand sales by region and product line              |
-| Marketing Analyst      | Segment customers for targeted campaigns                 |
-| Data Engineering Team  | Build a scalable, clean, and maintainable data warehouse |
+| Data Analysts          | Needed structured, documented, and reliable tables to run reports and build dashboards without manually cleaning raw CSVs   |
+| BI Developers          | Needed a central fact/dim table structure to plug into Power BI/Tableau                                                     |
+| IT/Infrastructure	     | Needed schema modularity (bronze/silver/gold) to support versioning, debugging, and scale-up                                |
+| Data Engineering Team  | Needed a production-grade architecture that separates raw, clean, and modeled data layers with robust QA                    |
 
 ## 🏗️ Data Architecture
 
