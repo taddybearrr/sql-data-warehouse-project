@@ -2,7 +2,7 @@
 
 ## 📘 Project Overview
 
-This project showcases a complete SQL-based data warehouse solution developed using a Medallion Architecture (Bronze → Silver → Gold) for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
+As a self-directed data analyst, I developed this project to showcase a complete SQL-based data warehouse solution utilizing the "Medallion Architecture" data framework (Bronze → Silver → Gold) to build an ETL pipeline for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
 
 ## 🔍 Business Problem
 
@@ -94,27 +94,27 @@ ETL was implemented with SQL Server using stored procedures:
 
 ## 📊 Insights Enabled
 
-* Top-selling products and categories
-* Customer behavior by region, age, and gender
-* Time-based sales trends (e.g., seasonality)
-* Regional product performance
-
+* Top-selling products and categories — calculated by aggregating `sales_amount` in the `fact_sales` table and ranked using SQL window functions (e.g., `RANK()` or `ROW_NUMBER()` over product-level partitions)
+* Customer behavior by region, age, and gender — analyzed by grouping `dim_customers` by demographic attributes and summarizing metrics from `fact_sales`
+* Time-based sales trends (e.g., seasonality) — derived using `order_date` from `fact_sales` and aggregated by month or quarter
+* Regional product performance — joined `dim_customers.country` with `dim_products` to compare total sales across regions and product categories
 ## 📁 Project Structure
 
 ```
 sql_data_warehouse_project/
-|
 ├── datasets/              # Raw datasets used for the project (CRM and ERP data)
-|
+│   ├── source_crm         # CRM datasets (customer info, product info, sales details)
+│   ├── source_erp         # ERP datasets (customer demographics, location, product categories)
 ├── docs/                  # Project documentation and architecture details
-|   |── etl.drawio         # Naming conventions, data layer docs
 ├── sql_scripts/
+│   ├── init_database.sql  # Script to create the DW database and define bronze, silver, and gold schemas
 │   ├── bronze/            # DDL + Load procedures
-│   ├── silver/
-│   └── gold/
-├── quality_checks/        # Silver and Gold QA scripts
-├── notion_tracking/       # Task & epic logs from project planner
+│   ├── silver/            # Transformations and cleansing scripts
+│   └── gold/              # Star schema view creation scripts
+├── tests/                 # Silver and Gold QA scripts
+├── LICENSE                # MIT License
 ├── README.md              # (You are here)
+
 ```
 
 ## 🧰 Tools & Stack
@@ -125,29 +125,21 @@ sql_data_warehouse_project/
 * GitHub + Notion for tracking
 * Draw\.io for diagrams
 
-## ✅ Project Progress Tracker (via [Notion](https://www.notion.so/SQL-Data-Warehouse-Project-2056694dac8f80588b53c33e7df890c4?source=copy_link))
+## ✅ Project Management (via [Notion](https://www.notion.so/SQL-Data-Warehouse-Project-2056694dac8f80588b53c33e7df890c4?source=copy_link))
 
-By utilizing Notion, I was able to track the progress of my project at an epic-level to a task-level. Which each project epic comes with varying amounts of tasks that have been broken down into minute details.
+By utilizing Notion, I tracked the progress of my project at an epic level to a task level. I enabled structured progress monitoring across all project phases — from data ingestion to QA and modeling. This reinforced agile development practices and ensured each component (ETL, QA, modeling, documentation) was systematically built and reviewed.
 
 Project Epics included:
 * Requirement Analysis
-  * Analyze & Understand the Requirements
 * Design Data Architecture
-  * Choose Data Management Approach
-  * Brainstorm & Design The Layers
-  * Draw the Data Architecture (Draw.io)
 * Project Initialization
-  * Create Detailed Project Tasks (Notion)
-  * Define Project Naming Conventions
-  * Create GIT Repo & Prepare The Repo Structure
-  * Create Database & Schemas
 * Build Bronze Layer
 * Build Silver Layer
 * Build Gold Layer
 
 ## 👨‍💼 About Me
 
-I’m a former digital marketer and creative dance director who’s now diving into data. After years of building dance programs, running marketing campaigns, and leading creative projects, I realized how much I enjoy working with data to solve real problems. I’ve been learning tools like SQL, Python, and Tableau through hands-on projects — from building dashboards for a local dance studio to analyzing TikTok data for a classification model. My goal is to bring both structure and creative storytelling to the way people use data.
+I'm a data analyst and dance educator passionate about leveraging data to solve real-world business challenges. I completed this project as part of a self-directed portfolio challenge inspired by industry guidance, applying strong data modeling, SQL development, and data quality principles. This project strengthens my portfolio as I transition into more technical roles at the intersection of analytics and data engineering. My goal is to bring both structure and creative storytelling to the way people use data.
 
 ## 🛡️ License
 
