@@ -9,10 +9,10 @@
 - [ETL Process](#-etl-process)
 - [Data Quality Checks](#-data-quality-checks)
 - [Data Modeling (Star Schema)](#-data-modeling-star-schema)
-- [Insights Enabled](#-insights-enabled)
 - [Project Structure](#-project-structure)
 - [Tools & Stack](#-tools--stack)
 - [Project Management](#-project-management)
+- [Business Impact & Enablement](#-business-impact--enablement)
 - [About Me](#-about-me)
 
 
@@ -110,13 +110,14 @@ ETL was implemented with SQL Server using stored procedures:
 
   * Linked via `customer_key`, `product_key`
   * Includes: `order_date`, `sales_amount`, `quantity`, `price`
+ 
+## 🧰 Tools & Stack
 
-## 📊 Insights Enabled
-
-* Top-selling products and categories — calculated by aggregating `sales_amount` in the `fact_sales` table and ranked using SQL window functions (e.g., `RANK()` or `ROW_NUMBER()` over product-level partitions)
-* Customer behavior by region, age, and gender — analyzed by grouping `dim_customers` by demographic attributes and summarizing metrics from `fact_sales`
-* Time-based sales trends (e.g., seasonality) — derived using `order_date` from `fact_sales` and aggregated by month or quarter
-* Regional product performance — joined `dim_customers.country` with `dim_products` to compare total sales across regions and product categories
+* SQL Server 2022 (T-SQL)
+* SSMS
+* CSV files as data source
+* GitHub + Notion for tracking
+* Draw\.io for diagrams
 
 ## 📁 Project Structure
 
@@ -158,6 +159,31 @@ Project Epics included:
 * Build Bronze Layer
 * Build Silver Layer
 * Build Gold Layer
+
+## 💼 Business Impact & Enablement
+
+Although this project does not perform direct business analysis, it lays the critical groundwork for it. By consolidating messy, disconnected ERP and CRM datasets into a unified, structured data warehouse, this project delivers several key business enablement outcomes:
+
+### ✅ 1. Centralized, Reliable Data Platform
+- Unified six separate raw CSV datasets from multiple systems into a centralized SQL data warehouse using Medallion Architecture (Bronze → Silver → Gold).
+- Eliminated the need for analysts to work with inconsistent, error-prone flat files.
+
+### ✅ 2. Analytics-Ready Data Models
+- Delivered a **star schema sales data mart** (`fact_sales`, `dim_customers`, `dim_products`) that enables seamless integration into BI tools like Power BI or Tableau.
+- Structured the data in a way that supports fast, efficient querying for revenue trends, customer segmentation, and product analysis.
+
+### ✅ 3. High Data Quality and Trust
+- Applied data cleansing, transformation, and validation at the Silver layer to correct date logic, null values, inconsistent formats, and pricing anomalies.
+- Designed Gold layer views with enforced referential integrity — ensuring every fact table record is accurately linked to a valid customer and product.
+
+### ✅ 4. Reusable Engineering Framework
+- Established a modular ETL structure using SQL scripts and stored procedures for each layer of the architecture.
+- Created reusable logic for future ingestion, cleansing, and modeling, accelerating time-to-insight for future datasets or projects.
+
+### ✅ 5. Stakeholder Enablement
+- Enabled data analysts and BI developers to focus on insights and reporting — not cleaning or merging data.
+- Provided a reliable foundation for business teams to build dashboards, KPIs, and decision-making tools aligned with trusted data sources.
+
 
 ## 👨‍💼 About Me
 
