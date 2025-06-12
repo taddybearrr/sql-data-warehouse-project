@@ -22,19 +22,15 @@ The company lacked a centralized, analysis-ready database to answer critical bus
 | Marketing Analyst      | Segment customers for targeted campaigns                 |
 | Data Engineering Team  | Build a scalable, clean, and maintainable data warehouse |
 
-## 🏗️ Data Warehouse Architecture
+## 🏗️ Data Architecture
 
-Follows the **Medallion Architecture** using layered schemas:
+![Data Architecture](docs/data_architecture.png)
+
+This data architecture follows the **Medallion Architecture** using layered schemas:
 
 * **Bronze Layer**: Raw ingestion from source CSVs (`cust_info`, `sales_details`, `prd_info`, `cust_az12`, etc.)
 * **Silver Layer**: Cleaned, standardized, and integrated data (e.g. standardizing gender/marital status, deriving product category IDs)
 * **Gold Layer**: Star schema views for reporting (`dim_customers`, `dim_products`, `fact_sales`)
-
-Data Flow Diagram → `data_flow.png`
-Data Architecture → `data_architecture.png`
-Data Model → `data_model.png`
-
-![Star Schema](data_model.png)
 
 ## ⭮ ETL Process Summary
 
@@ -81,6 +77,8 @@ ETL was implemented with SQL Server using stored procedures:
 * Orphan checks for foreign keys
 
 ## 📜 Final Data Model (Star Schema)
+
+![Data Model](docs/data_model.png)
 
 ### Dimensions:
 
