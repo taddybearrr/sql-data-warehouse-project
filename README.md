@@ -2,7 +2,7 @@
 
 ## 📘 Project Overview
 
-This project showcases a complete SQL-based data warehouse solution developed using a Medallion Architecture (Bronze → Silver → Gold) for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Data With Baraa*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
+This project showcases a complete SQL-based data warehouse solution developed using a Medallion Architecture (Bronze → Silver → Gold) for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
 
 ## 🔍 Business Problem
 
