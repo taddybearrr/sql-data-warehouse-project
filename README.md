@@ -1,5 +1,21 @@
 # 🚲 SQL Data Warehouse Case Study — Customer & Sales Analytics
 
+## 📚 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Business Problem](#-business-problem)
+- [Stakeholders & Goals](#-stakeholders--goals)
+- [Data Architecture](#-data-architecture)
+- [ETL Process](#-etl-process)
+- [Data Quality Checks](#-data-quality-checks)
+- [Data Modeling (Star Schema)](#-data-modeling-star-schema)
+- [Insights Enabled](#-insights-enabled)
+- [Project Structure](#-project-structure)
+- [Tools & Stack](#-tools--stack)
+- [Project Management](#-project-management)
+- [About Me](#-about-me)
+
+
 ## 📘 Project Overview
 
 As a self-directed data analyst, I developed this project to showcase a complete SQL-based data warehouse solution utilizing the "Medallion Architecture" data framework (Bronze → Silver → Gold) to build an ETL pipeline for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
@@ -24,15 +40,15 @@ The company lacked a centralized, analysis-ready database to answer critical bus
 
 ## 🏗️ Data Architecture
 
-![Data Architecture](docs/data_architecture.png)
-
 This data architecture follows the **Medallion Architecture** using layered schemas:
+
+![Data Architecture](docs/data_architecture.png)
 
 * **Bronze Layer**: Raw ingestion from source CSVs (`cust_info`, `sales_details`, `prd_info`, `cust_az12`, etc.)
 * **Silver Layer**: Cleaned, standardized, and integrated data (e.g. standardizing gender/marital status, deriving product category IDs)
 * **Gold Layer**: Star schema views for reporting (`dim_customers`, `dim_products`, `fact_sales`)
 
-## ⭮ ETL Process Summary
+## ⭮ ETL Process
 
 ETL was implemented with SQL Server using stored procedures:
 
@@ -76,7 +92,7 @@ ETL was implemented with SQL Server using stored procedures:
 * Referential integrity between `fact_sales` and dimension tables
 * Orphan checks for foreign keys
 
-## 📜 Final Data Model (Star Schema)
+## 📜 Data Modeling (Star Schema)
 
 ![Data Model](docs/data_model.png)
 
@@ -98,6 +114,7 @@ ETL was implemented with SQL Server using stored procedures:
 * Customer behavior by region, age, and gender — analyzed by grouping `dim_customers` by demographic attributes and summarizing metrics from `fact_sales`
 * Time-based sales trends (e.g., seasonality) — derived using `order_date` from `fact_sales` and aggregated by month or quarter
 * Regional product performance — joined `dim_customers.country` with `dim_products` to compare total sales across regions and product categories
+
 ## 📁 Project Structure
 
 ```
@@ -125,7 +142,9 @@ sql_data_warehouse_project/
 * GitHub + Notion for tracking
 * Draw\.io for diagrams
 
-## ✅ Project Management (via [Notion](https://www.notion.so/SQL-Data-Warehouse-Project-2056694dac8f80588b53c33e7df890c4?source=copy_link))
+## ✅ Project Management 
+
+(via [Notion](https://www.notion.so/SQL-Data-Warehouse-Project-2056694dac8f80588b53c33e7df890c4?source=copy_link))
 
 By utilizing Notion, I tracked the progress of my project at an epic level to a task level. I enabled structured progress monitoring across all project phases — from data ingestion to QA and modeling. This reinforced agile development practices and ensured each component (ETL, QA, modeling, documentation) was systematically built and reviewed.
 
