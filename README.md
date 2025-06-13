@@ -1,4 +1,4 @@
-# 🚲 SQL Data Warehouse Case Study — Customer & Sales Analytics
+# 🚲 SQL Data Warehouse Case Study — Customer & Sales Data
 
 ## 📚 Table of Contents
 
@@ -20,11 +20,11 @@
 
 ## 📘 Project Overview
 
-As a self-directed data analyst, I developed this project to showcase a complete SQL-based data warehouse solution utilizing the "Medallion Architecture" data framework (Bronze → Silver → Gold) to build an ETL pipeline for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
+As a self-directed data analyst, I created this data engineering project to showcase a complete SQL-based data warehouse solution utilizing the "Medallion Architecture" data framework (Bronze → Silver → Gold) to build an ETL pipeline for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
 
 ## 🔍 Business Problem
 
-The company was unable to generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. With bad data, it would be harder for analysts & stakeholders to find solutions to crucial business questions like:
+The company could not generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. With bad data, it would be harder for analysts & stakeholders to find solutions to crucial business questions like:
 
 * Which products generate the most revenue?
 * Who are our most valuable customers?
