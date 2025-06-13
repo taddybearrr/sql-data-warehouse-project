@@ -24,7 +24,7 @@ As a self-directed data analyst, I developed this project to showcase a complete
 
 ## 🔍 Business Problem
 
-The company was unable to generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. Due to bad data, the company could not answer crucial business questions like:
+The company was unable to generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. With bad data, it would be harder for analysts & stakeholders to find solutions to crucial business questions like:
 
 * Which products generate the most revenue?
 * Who are our most valuable customers?
