@@ -175,7 +175,7 @@ Although this project does not perform direct business analysis, it lays the cri
 
 ## 👨‍💼 About Me
 
-I'm a data analyst and dance educator passionate about leveraging data to solve real-world business challenges. I completed this project as part of a self-directed portfolio challenge inspired by industry guidance, applying strong data modeling, SQL development, and data quality principles. This project strengthens my portfolio as I transition into more technical roles at the intersection of analytics and data engineering. My goal is to bring both structure and creative storytelling to the way people use data.
+I'm a data analyst and dance educator passionate about leveraging data to solve real-world business challenges. I completed this project as part of a guided portfolio challenge inspired by industry guidance, applying strong data modeling, SQL development, and data quality principles. This project strengthens my portfolio as I transition into more technical roles at the intersection of analytics and data engineering. My goal is to bring both structure and creative storytelling to the way people use data.
 
 ## 🛡️ License
 
