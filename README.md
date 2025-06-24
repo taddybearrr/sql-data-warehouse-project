@@ -1,4 +1,4 @@
-# 🚲 SQL Data Warehouse Case Study — Customer & Sales Data
+# 🚲 Velocity Bikes: Full-Stack SQL Analytics
 
 ## 📚 Table of Contents
 
