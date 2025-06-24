@@ -22,14 +22,16 @@
 
 As a self-directed data analyst, I created this data engineering project to showcase a complete SQL-based data warehouse solution utilizing the "Medallion Architecture" data framework (Bronze → Silver → Gold) to build an ETL pipeline for a fictional retail company, **Velocity Bikes**. Inspired by a real-world framework taught by *Baraa Khatib Salkini*, I transformed fragmented ERP and CRM data into an analytics-ready star schema to support business intelligence and stakeholder decision-making.
 
+UPDATE (6/24/2025):
+After completing the core data engineering build of the data warehouse, I extended this project into Exploratory Data Analysis (EDA) and Advanced SQL Analytics. Using the cleaned and modeled data in the Gold layer, I developed analytical SQL queries and final reports to derive actionable business insights — completing the pipeline from raw ingestion to decision-ready outputs.
+
 ## 🔍 Business Problem
 
 The company could not generate reliable analytics due to fragmented CRM and ERP systems, poor data quality, and inconsistent structures. Stakeholders lacked a unified, queryable environment to support product, customer, and sales reporting. With bad data, it would be harder for analysts & stakeholders to find solutions to crucial business questions like:
 
 * Which products generate the most revenue?
 * Who are our most valuable customers?
-* What patterns exist in sales across countries and time?
-* How can we enable more effective marketing campaigns?
+* What patterns exist in sales across countries?
 
 I designed and implemented a modular **SQL data warehouse** to unify raw CRM and ERP datasets. This enabled clean, scalable, and analytics-ready data models for future business intelligence use. This architecture enables analysts and BI developers to confidently explore trends in customer behavior, product performance, and sales over time — without wrestling with dirty source data.
 
@@ -113,6 +115,26 @@ ETL was implemented with SQL Server using stored procedures:
   * Linked via `customer_key`, `product_key`
   * Includes: `order_date`, `sales_amount`, `quantity`, `price`
  
+## 📊 EDA & Advanced SQL Analytics
+
+This phase applies data analytics over the final Gold Layer to extract value and answer key business questions. It includes:
+
+* **Exploratory Data Analysis (EDA)** to uncover baseline patterns in customers, products, and sales behavior
+* **Advanced SQL Analytics** modules using ranking, window functions, part-to-whole relationships, and segmentation
+* **Reporting SQL Views** for executive-ready dashboards on product and customer performance
+
+| File                                | Description                                                                |
+| ----------------------------------- | -------------------------------------------------------------------------- |
+| `exploratory_data_analysis.sql`     | Foundation EDA across customers, products, and countries                   |
+| `01_changes_over_time_analysis.sql` | Checking Sales Performance Over Time through Year-over-year trends         |
+| `02_cumulative_analysis.sql`        | Calculating total sales per month and running total of sales over time     |
+| `03_performance_analysis.sql`       | Measuring performance of products & customers over time                    |
+| `04_data_segmentation.sql`          | Segment products into cost ranges & customers into spending behaviors      |
+| `05_part_to_whole_analysis.sql`     | Discovering product categories that contribute the most to overall sales   |
+| `report_customers.sql`              | Final SQL view summarizing key customer metrics & behavior                 |
+| `report_product.sql`                | Final SQL view summarizing key product metrics & behaviors                 |
+
+
 ## 🧰 Tools & Stack
 
 * SQL Server 2022 (T-SQL)
@@ -134,6 +156,17 @@ sql_data_warehouse_project/
 │   ├── bronze/            # DDL + Load procedures
 │   ├── silver/            # Transformations and cleansing scripts
 │   └── gold/              # Star schema view creation scripts
+├── analytics/             # New analytics module
+│   ├── eda/
+│   │   └── exploratory_data_analysis.sql
+│   └── advanced/
+│       ├── 01_changes_over_time_analysis.sql
+│       ├── 02_cumulative_analysis.sql
+│       ├── 03_performance_analysis.sql
+│       ├── 04_data_segmentation.sql
+│       ├── 05_part_to_whole_analysis.sql
+│       ├── report_customers.sql
+│       └── report_product.sql
 ├── tests/                 # Silver and Gold QA scripts
 ├── LICENSE                # MIT License
 ├── README.md              # (You are here)
@@ -164,14 +197,32 @@ Project Epics included:
 
 ## 💼 Business Impact & Enablement
 
-Although this project does not perform direct business analysis, it lays the critical groundwork for it. By consolidating messy, disconnected ERP and CRM datasets into a unified, structured data warehouse, this project delivers key business enablement outcomes:
+By consolidating messy, disconnected ERP and CRM datasets into a unified, structured data warehouse — and building analytics on top — this project delivered:
 
 - A centralized data platform
 - High data quality and trust
 - Reusable engineering framework
-- Enablement of business-ready insights & reporting
+- Executive-ready insights
+- A full data pipeline to foster cross-functional collaboration between data engineers, analysts, and business teams
 
+## 💡 Business Questions & Data-Drive Answers
 
+1. Which products generate the most revenue?
+The highest-grossing products were identified in `exploratory_data_analysis.sql` and `report_product.sql`.
+* Products in the **Road Bikes** and **Mountain Bikes** subcategories consistently generated the most revenue.
+* The top 5 products that dominated in total revenue are all mountain bikes.
+   
+2. Who are our most valuable customers?
+Found in `exploratory_data_analysis.sql` and `report_customers.sql`.
+* Customers were segmented by **purchase frequency**, **lifetime value**, and **recency**.
+* The top 10 customers contributed to at least $10,000 in revenue.
+* High-value customers had a lifespan (Difference between `last_order_date` and `first_order_date`) of around 20-30 months.
+* Our top customers were largely `50 and above` in age.
+
+3. What patterns exist in sales across countries?
+Explored in `exploratory_data_analysis.sql`.
+* A large number of products sold were located mostly in the **United States**, with **France** becoming the country with the least amount of processed transactions.
+* **United States** and **Australia** generated close to $9 million in total sales, while **Canada** was the least known country with around $1.9 million. About $200,000 of the total sales were located in unidentified countries.
 
 ## 👨‍💼 About Me
 
