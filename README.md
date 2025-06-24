@@ -9,10 +9,12 @@
 - [ETL Process](#-etl-process)
 - [Data Quality Checks](#-data-quality-checks)
 - [Data Modeling (Star Schema)](#-data-modeling-star-schema)
+- [EDA & Advanced SQL Analytics](#eda--advanced-sql-analytics)
 - [Project Structure](#-project-structure)
 - [Tools & Stack](#-tools--stack)
 - [Project Management](#-project-management)
 - [Business Impact & Enablement](#-business-impact--enablement)
+- [Business Questions & Data-Driven Answers](#-business-impact--data-driven-answers)
 - [About Me](#-about-me)
 - [License](#-license)
 - [Credits](#-credits)
@@ -205,7 +207,7 @@ By consolidating messy, disconnected ERP and CRM datasets into a unified, struct
 - Executive-ready insights
 - A full data pipeline to foster cross-functional collaboration between data engineers, analysts, and business teams
 
-## 💡 Business Questions & Data-Drive Answers
+## 💡 Business Questions & Data-Driven Answers
 
 1. Which products generate the most revenue?
 The highest-grossing products were identified in `exploratory_data_analysis.sql` and `report_product.sql`.
