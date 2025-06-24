@@ -134,7 +134,7 @@ This phase applies data analytics over the final Gold Layer to extract value and
 | `04_data_segmentation.sql`          | Segment products into cost ranges & customers into spending behaviors      |
 | `05_part_to_whole_analysis.sql`     | Discovering product categories that contribute the most to overall sales   |
 | `report_customers.sql`              | Final SQL view summarizing key customer metrics & behavior                 |
-| `report_product.sql`                | Final SQL view summarizing key product metrics & behaviors                 |
+| `report_products.sql`                | Final SQL view summarizing key product metrics & behaviors                 |
 
 
 ## 🧰 Tools & Stack
@@ -168,7 +168,7 @@ sql_data_warehouse_project/
 │       ├── 04_data_segmentation.sql
 │       ├── 05_part_to_whole_analysis.sql
 │       ├── report_customers.sql
-│       └── report_product.sql
+│       └── report_products.sql
 ├── tests/                 # Silver and Gold QA scripts
 ├── LICENSE                # MIT License
 ├── README.md              # (You are here)
@@ -210,7 +210,7 @@ By consolidating messy, disconnected ERP and CRM datasets into a unified, struct
 ## 💡 Business Questions & Data-Driven Answers
 
 1. Which products generate the most revenue?
-The highest-grossing products were identified in `exploratory_data_analysis.sql` and `report_product.sql`.
+The highest-grossing products were identified in `exploratory_data_analysis.sql` and `report_products.sql`.
 * Products in the **Road Bikes** and **Mountain Bikes** subcategories consistently generated the most revenue.
 * The top 5 products that dominated in total revenue are all mountain bikes.
    
